@@ -1,0 +1,44 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:login/SplashScreen.dart';
+import 'package:login/loginsignup.dart';
+
+import 'register.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    initialRoute: 'login',
+    routes: {
+      'login': (context) => const Mylogin(),
+      'register': (context) => const MyRegister(),
+    },
+  ));
+}
+
+void addUser(String email, String password) {
+  FirebaseFirestore.instance.collection('users').add({
+    'email': email,
+    'password': password,
+  }).then((value) {
+    print("User added successfully");
+  }).catchError((error) {
+    print("Failed to add user: $error");
+  });
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({required Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
+    );
+  }
+}

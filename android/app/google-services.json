@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "411020444090",
+    "project_id": "cipherserve-app",
+    "storage_bucket": "cipherserve-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411020444090:android:4ea03f47b062bc94809d83",
+        "android_client_info": {
+          "package_name": "com.example.cipherserve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411020444090-259jvd2vhhfe8blv8sh93f8hhb0h45ns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhat2hCuMFC7j3hVCbRLpBLggANpQxyCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411020444090-259jvd2vhhfe8blv8sh93f8hhb0h45ns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
