@@ -141,11 +141,11 @@ class Mylogin extends StatefulWidget {
   const SignInButton(
       {super.key, required this.buttonText, required this.onPressed});
 */
-class SignInButton extends State<Mylogin> {
+class LogInButton extends State<Mylogin> {
   final String buttonText;
   final VoidCallback onPressed;
 
-  SignInButton({
+  LogInButton({
     Key? key,
     required this.buttonText,
     required this.onPressed,
@@ -164,7 +164,6 @@ class _MyloginState extends State<Mylogin> {
   @override
   Widget build(BuildContext context) {
     final userEmailController = TextEditingController();
-
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -186,15 +185,12 @@ class _MyloginState extends State<Mylogin> {
                 child: Column(
                   children: [
                     TextField(
-                      controller: userEmailController,
                       decoration: InputDecoration(
-                        fillColor: Colors.grey.shade100,
-                        filled: true,
-                        hintText: 'Email',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
+                          fillColor: Colors.grey.shade100,
+                          filled: true,
+                          hintText: 'Email',
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
                     ),
                     const SizedBox(
                       height: 30,
@@ -216,12 +212,18 @@ class _MyloginState extends State<Mylogin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Sign In',
-                          style: TextStyle(
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, 'home');
+                          },
+                          child: const Text(
+                            'Log In',
+                            style: TextStyle(
                               color: Color(0xff4c505b),
                               fontSize: 27,
-                              fontWeight: FontWeight.w700),
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           height: 30,
@@ -234,18 +236,7 @@ class _MyloginState extends State<Mylogin> {
                                 Navigator.pushNamed(context, 'register');
                               },
                               child: const Text(
-                                'Sign Up',
-                                style: TextStyle(
-                                  decoration: TextDecoration.underline,
-                                  fontSize: 18,
-                                  color: Color(0xff4c505b),
-                                ),
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () {},
-                              child: const Text(
-                                'Forgot Password',
+                                'Create Account',
                                 style: TextStyle(
                                   decoration: TextDecoration.underline,
                                   fontSize: 18,

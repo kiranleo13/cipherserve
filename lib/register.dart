@@ -83,7 +83,7 @@ class _MyRegisterState extends State<MyRegister> {
                         children: [
                           TextButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, 'register');
+                                Navigator.pushNamed(context, 'login');
                               },
                               child: const Text(
                                 'Create Account',

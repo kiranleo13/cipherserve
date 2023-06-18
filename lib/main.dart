@@ -2,9 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:login/SplashScreen.dart';
+import 'package:login/camera.dart';
+import 'package:login/home.dart';
 import 'package:login/loginsignup.dart';
-
-import 'register.dart';
+import 'package:login/register.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +17,8 @@ void main() async {
     routes: {
       'login': (context) => const Mylogin(),
       'register': (context) => const MyRegister(),
+      'home': (context) => const MyHomePage(),
+      'camera': (context) => ImagePickerExample(),
     },
   ));
 }
