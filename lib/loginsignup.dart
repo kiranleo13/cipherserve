@@ -157,7 +157,6 @@ class _MyloginState extends State<Mylogin> {
   TextEditingController password = new TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final userEmailController = TextEditingController();
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(

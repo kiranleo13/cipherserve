@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:login/SplashScreen.dart';
 import 'package:login/camera.dart';
 import 'package:login/home.dart';
-import 'package:login/location.dart';
 import 'package:login/loginsignup.dart';
 import 'package:login/profile.dart';
 import 'package:login/register.dart';
@@ -47,7 +45,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: Mylogin(),
     );
   }
 }
@@ -78,10 +76,43 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Go to Shopping Cart'),
+          child: Text('Shopping'),
           onPressed: () {
             Navigator.pushNamed(context, '/cart');
           },
+        ),
+      ),
+    );
+  }
+}
+
+class MyLocation extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: '',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Location(),
+        '/my_location': (context) => MyLocation(),
+      },
+    );
+  }
+}
+
+class Location extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/my_location');
+          },
+          child: Text('location'),
         ),
       ),
     );

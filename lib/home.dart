@@ -113,6 +113,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       'About', CupertinoIcons.question_circle, Colors.blue),
                   itemDashboard(
                       'Contact', CupertinoIcons.phone, Colors.pinkAccent),
+                  itemDashboard('Location', CupertinoIcons.map,
+                      const Color.fromARGB(255, 64, 233, 255)),
+                  itemDashboard('Product', CupertinoIcons.device_laptop,
+                      Color.fromARGB(255, 41, 49, 50)),
                 ],
               ),
             ),
@@ -219,29 +223,30 @@ class _MyHomePageState extends State<MyHomePage> {
               shape: BoxShape.circle,
             ),
             child: IconButton(
-              icon: Icon(iconData, color: Colors.white),
-              onPressed: () {
-                // Add specific functionality for each button
-                if (title == 'Profile') {
-                  Navigator.pushNamed(context, 'Profile');
-                  // Handle Profile button press
-                } else if (title == 'Services') {
-                  // Handle Services button press
-                } else if (title == 'Cart') {
-                  Navigator.pushNamed(context, 'shopping');
-                  // Handle Cart button press
-                } else if (title == 'Categories') {
-                  // Handle Categories button press
-                } else if (title == 'notifications') {
-                  // Handle Notifications button press
-                } else if (title == 'About') {
-                  // Handle About button press
-                } else if (title == 'Contact') {
-                  Navigator.pushNamed(context, 'location');
-                  // Handle Contact button press
-                }
-              },
-            ),
+                icon: Icon(iconData, color: Colors.white),
+                onPressed: () {
+                  // Add specific functionality for each button
+                  if (title == 'Profile') {
+                    Navigator.pushNamed(context, 'Profile');
+                    // Handle Profile button press
+                  } else if (title == 'Services') {
+                    // Handle Services button press
+                  } else if (title == 'Cart') {
+                    Navigator.pushNamed(context, 'shopping');
+                    // Handle Cart button press
+                  } else if (title == 'Categories') {
+                    // Handle Categories button press
+                  } else if (title == 'notifications') {
+                    // Handle Notifications button press
+                  } else if (title == 'About') {
+                    // Handle About button press
+                  } else if (title == 'Contact') {
+                    // Handle Contact button press
+                  } else if (title == 'Location') {
+                    Navigator.pushNamed(context, 'location');
+                    // Handle Contact button press
+                  } else if (title == 'Product') {}
+                }),
           ),
           const SizedBox(height: 8),
           Text(
