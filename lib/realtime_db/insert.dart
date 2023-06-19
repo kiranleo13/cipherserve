@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class RealtimedatabaseIn extends StatefulWidget {
   RealtimedatabaseIn({Key? key}) : super(key: key);
@@ -15,24 +15,48 @@ class RealtimedatabaseInState extends State<RealtimedatabaseIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:SafeArea(
+      body: SafeArea(
         child: Column(
-          : [
+          children: [
             Text(
               "Enter Data",
-              style:TextStyle(fontSize:28),
-
+              style: TextStyle(fontSize: 28),
             ),
             SizedBox(
               height: 30,
             ),
             TextFormField(
-              r
-            )
+              controller: firstnameController,
+              decoration: InputDecoration(
+                  labelText: 'First Name', border: OutlineInputBorder()),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            TextFormField(
+              controller: secondnameController,
+              decoration: InputDecoration(
+                  labelText: 'Last Name', border: OutlineInputBorder()),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            TextFormField(
+              controller: EmailController,
+              decoration: InputDecoration(
+                  labelText: 'Email', border: OutlineInputBorder()),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            TextFormField(
+              controller: passwordController,
+              decoration: InputDecoration(
+                  labelText: 'Password', border: OutlineInputBorder()),
+            ),
           ],
-        )
-        )
+        ),
+      ),
     );
   }
 }
-*/

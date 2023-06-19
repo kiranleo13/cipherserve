@@ -29,7 +29,7 @@ class _ImagePickerExampleState extends State<ImagePickerExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Image Picker'),
+        title: Text('Photo'),
       ),
       body: Center(
         child: Column(
@@ -43,7 +43,7 @@ class _ImagePickerExampleState extends State<ImagePickerExample> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () => _pickImage(ImageSource.gallery),
-              child: Text('Pick From Gallery'),
+              child: Text('Gallery'),
             ),
             SizedBox(height: 10),
             ElevatedButton(

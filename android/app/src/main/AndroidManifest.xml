@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cipherserve">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
    <application
         android:label="cipherserve"
         android:name="${applicationName}"
@@ -20,6 +22,9 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
+              <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDx7p1-q1GyYVdTRADVVMSZWCsha2-inG4" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

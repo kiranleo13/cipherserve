@@ -123,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  itemDashboard(String title, IconData iconData, Color background) => Container(
+  /* itemDashboard(String title, IconData iconData, Color background) => Container(
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
@@ -150,4 +150,106 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       );
+}
+
+  Widget itemDashboard(String title, IconData iconData, Color background) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            offset: const Offset(0, 5),
+            color: Theme.of(context).primaryColor.withOpacity(.2),
+            spreadRadius: 2,
+            blurRadius: 5,
+          )
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: background,
+              shape: BoxShape.circle,
+            ),
+            child: IconButton(
+                icon: Icon(iconData, color: Colors.white),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'Camera');
+                }
+                // Add your onPressed logic here
+
+                ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            title.toUpperCase(),
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+        ],
+      ),
+    );
+  }
+}
+*/
+  Widget itemDashboard(String title, IconData iconData, Color background) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            offset: const Offset(0, 5),
+            color: Theme.of(context).primaryColor.withOpacity(.2),
+            spreadRadius: 2,
+            blurRadius: 5,
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: background,
+              shape: BoxShape.circle,
+            ),
+            child: IconButton(
+              icon: Icon(iconData, color: Colors.white),
+              onPressed: () {
+                // Add specific functionality for each button
+                if (title == 'Profile') {
+                  Navigator.pushNamed(context, 'Profile');
+                  // Handle Profile button press
+                } else if (title == 'Services') {
+                  // Handle Services button press
+                } else if (title == 'Cart') {
+                  Navigator.pushNamed(context, 'shopping');
+                  // Handle Cart button press
+                } else if (title == 'Categories') {
+                  // Handle Categories button press
+                } else if (title == 'notifications') {
+                  // Handle Notifications button press
+                } else if (title == 'About') {
+                  // Handle About button press
+                } else if (title == 'Contact') {
+                  Navigator.pushNamed(context, 'location');
+                  // Handle Contact button press
+                }
+              },
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            title.toUpperCase(),
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+        ],
+      ),
+    );
+  }
 }

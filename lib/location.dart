@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
-class MyRegister extends StatefulWidget {
-  const MyRegister({super.key});
+class MyLocation extends StatefulWidget {
+  const MyLocation({super.key});
 
   @override
-  _MyRegisterState createState() => _MyRegisterState();
+  _MyLocationState createState() => _MyLocationState();
 }
 
-class _MyRegisterState extends State<MyRegister> {
+class _MyLocationState extends State<MyLocation> {
   late GoogleMapController mapController;
   Location location = Location();
   LatLng? _currentLocation;

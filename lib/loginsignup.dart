@@ -123,6 +123,7 @@ class _MyloginState extends State<Mylogin> {
 
 */
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Mylogin extends StatefulWidget {
@@ -132,15 +133,6 @@ class Mylogin extends StatefulWidget {
   State<Mylogin> createState() => _MyloginState();
 }
 
-/*class SignInButton extends StatelessWidget {
-  final String buttonText;
-  final VoidCallback onPressed;
-  final userEmailController = TextEditingController();
-  late DatabaseReference dbref;
-
-  const SignInButton(
-      {super.key, required this.buttonText, required this.onPressed});
-*/
 class LogInButton extends State<Mylogin> {
   final String buttonText;
   final VoidCallback onPressed;
@@ -161,6 +153,8 @@ class LogInButton extends State<Mylogin> {
 }
 
 class _MyloginState extends State<Mylogin> {
+  TextEditingController email = new TextEditingController();
+  TextEditingController password = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     final userEmailController = TextEditingController();
@@ -185,6 +179,7 @@ class _MyloginState extends State<Mylogin> {
                 child: Column(
                   children: [
                     TextField(
+                      controller: email,
                       decoration: InputDecoration(
                           fillColor: Colors.grey.shade100,
                           filled: true,
@@ -196,6 +191,7 @@ class _MyloginState extends State<Mylogin> {
                       height: 30,
                     ),
                     TextField(
+                      controller: password,
                       obscureText: true,
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
@@ -214,6 +210,13 @@ class _MyloginState extends State<Mylogin> {
                       children: [
                         TextButton(
                           onPressed: () {
+                            Map<String, dynamic> data = {
+                              "Email": email.text,
+                              "Password": password
+                            };
+                            FirebaseFirestore.instance
+                                .collection("Login")
+                                .add(data);
                             Navigator.pushNamed(context, 'home');
                           },
                           child: const Text(

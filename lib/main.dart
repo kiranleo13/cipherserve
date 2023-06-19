@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:login/SplashScreen.dart';
 import 'package:login/camera.dart';
 import 'package:login/home.dart';
+import 'package:login/location.dart';
 import 'package:login/loginsignup.dart';
+import 'package:login/profile.dart';
 import 'package:login/register.dart';
+import 'package:login/shopping_cart_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +22,9 @@ void main() async {
       'register': (context) => const MyRegister(),
       'home': (context) => const MyHomePage(),
       'camera': (context) => ImagePickerExample(),
+      'Profile': (context) => Profile(),
+      'shopping': (context) => ShoppingCartPage(),
+      'location': (context) => MyLocation(),
     },
   ));
 }
@@ -42,6 +48,42 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
+    );
+  }
+}
+
+class Shopping extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Shopping',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/cart': (context) => ShoppingCartPage(),
+      },
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text('Go to Shopping Cart'),
+          onPressed: () {
+            Navigator.pushNamed(context, '/cart');
+          },
+        ),
+      ),
     );
   }
 }
