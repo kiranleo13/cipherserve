@@ -18,7 +18,7 @@ void main() async {
     routes: {
       'login': (context) => const Mylogin(),
       'register': (context) => const MyRegister(),
-      'home': (context) => const MyHomePage(),
+      'home': (context) => MyHomePage(),
       'camera': (context) => ImagePickerExample(),
       'Profile': (context) => Profile(),
       'shopping': (context) => ShoppingCartPage(),
